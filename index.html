@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Cloud Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blockchain Cloud Monitor</h1>
+            <p>Облачная демонстрационная платформа блокчейн-транзакций</p>
+        </header>
+
+        <section class="card">
+            <h2>Добавить новую транзакцию</h2>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="sender">Отправитель:</label>
+                    <input type="text" id="sender" required placeholder="Например: Alice">
+                </div>
+                <div class="form-group">
+                    <label for="receiver">Получатель:</label>
+                    <input type="text" id="receiver" required placeholder="Например: Bob">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Сумма (BTC/ETH):</label>
+                    <input type="number" id="amount" step="0.01" required placeholder="1.5">
+                </div>
+                <button type="submit" class="btn">Создать транзакцию</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Управление блокчейном</h2>
+            <div class="actions">
+                <button id="verify-btn" class="btn secondary">Проверить целостность цепи</button>
+                <button id="tamper-btn" class="btn danger">Имитировать взлом (изменить блок 2)</button>
+            </div>
+            <div id="status-message" class="status-msg"></div>
+        </section>
+
+        <section class="card">
+            <h2>Реестр блоков и транзакций</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№ Блока</th>
+                            <th>Отправитель</th>
+                            <th>Получатель</th>
+                            <th>Сумма</th>
+                            <th>Статус</th>
+                            <th>Хеш предыдущего</th>
+                            <th>Хеш текущего блока</th>
+                        </tr>
+                    </thead>
+                    <tbody id="blockchain-tbody">
+                        <!-- Деректер JavaScript арқылы толықтырылады -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
